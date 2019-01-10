@@ -4,6 +4,56 @@
         <meta charset="utf-8">
         <title>Utils</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style media="screen">
+        html, body {
+            font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+        .cont {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .header-grand {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .header-grand h1 {
+            margin: 0;
+        }
+        .content .list ul, .content .list ul li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .content .list ul li {
+            text-align: center;
+            background: #F5F5F5;
+            border-radius: 5px;
+            margin: 0 0 15px;
+        }
+        .content .list ul li:hover {
+            background: #E5E5E5;
+        }
+        .content .list ul li a {
+            color: #06E;
+            color: #000;
+            text-decoration: none;
+            display: block;
+            padding: 15px 0;
+        }
+        .content .list ul li:hover a {
+            color: #06E;
+        }
+        .content .list ul li a h2 {
+            padding: 0 0 10px;
+            margin: 0;
+        }
+        .content .list ul li a p {
+            padding: 0 0;
+            margin: 0;
+        }
+        </style>
     </head>
     <body>
         <div class="cont">
@@ -16,7 +66,7 @@
             </header>
             <div class="content">
                 <div class="list">
-                    <ul>
+                    <ul id="js-List">
                         <li>
                             <a href="/aes/">
                                 <h2>AES</h2>
@@ -24,6 +74,31 @@
                             </a>
                         </li>
                     </ul>
+                    <div class="" id="js-ListContentPre" style="display:none;visibility:hidden;">
+ase AES
+AES symmetric cryptography.
+
+get-cookie Get Cookie
+Get cookie on any webpage.
+                    </div>
+                    <script type="text/javascript">
+                    var tmpl = '<li>\
+                        <a href="/_PATH_/">\
+                            <h2>_NAME_</h2>\
+                            <p>_INTRO_</p>\
+                        </a>\
+                    </li>';
+                    var list_legacy = [
+                        [ 'ase', 'AES', 'AES symmetric cryptography.' ],
+                        [ 'get-cookie', 'Get Cookie', 'Get cookie on any webpage.' ]
+                    ];
+                    var list = document.getElementById('js-ListContentPre').innerHTML.trim().split('\n\n').map(
+                        x => 
+                    ).
+                    document.getElementById('js-List').innerHTML = list.map(
+                        x => tmpl.replace('_PATH_', x[0]).replace('_NAME_', x[1]).replace('_INTRO_', x[2])
+                    ).join('');
+                    </script>
                 </div>
             </div>
         </div>
