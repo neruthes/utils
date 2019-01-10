@@ -75,10 +75,12 @@
                         </li>
                     </ul>
                     <div class="" id="js-ListContentPre" style="display:none;visibility:hidden;">
-ase AES
+ase
+AES
 AES symmetric cryptography.
 
-get-cookie Get Cookie
+get-cookie
+Get Cookie
 Get cookie on any webpage.
                     </div>
                     <script type="text/javascript">
@@ -93,8 +95,8 @@ Get cookie on any webpage.
                         [ 'get-cookie', 'Get Cookie', 'Get cookie on any webpage.' ]
                     ];
                     var list = document.getElementById('js-ListContentPre').innerHTML.trim().split('\n\n').map(
-                        x => 
-                    ).
+                        x => x.split('\n')
+                    );
                     document.getElementById('js-List').innerHTML = list.map(
                         x => tmpl.replace('_PATH_', x[0]).replace('_NAME_', x[1]).replace('_INTRO_', x[2])
                     ).join('');
